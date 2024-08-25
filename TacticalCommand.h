@@ -5,6 +5,8 @@
 
 #include "BattleStrategy.h"
 
+#include <vector>
+
 class TacticalCommand {
 
     private:
@@ -14,11 +16,12 @@ class TacticalCommand {
         TacticalCommand(BattleStrategy* initialStrategy);
 
         // Added OWN function
-        // ~TacticalCommand();  // Destructor to clean up strategy
+        TacticalCommand();
+        ~TacticalCommand();  // Destructor to clean up strategy
         
         void setStrategy(BattleStrategy* s);
-        void executeStrategy();
-        void chooseBestStrategy();  // Placeholder for future implementation
+        void executeStrategy(std::vector<LegionUnit*> units);
+        void chooseBestStrategy(std::vector<LegionUnit*> units);  // Placeholder for future implementation
 };
 
 #endif // TACTICALCOMMAND_H

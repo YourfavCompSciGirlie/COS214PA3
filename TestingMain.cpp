@@ -13,7 +13,12 @@
 #include "Infantry.h"
 #include "Cavalry.h"
 #include "Artillery.h"
+
 #include "TacticalCommand.h"
+#include "Flanking.h"
+#include "Fortification.h"
+#include "Ambush.h"
+
 #include "BattleStrategy.h"
 #include "TacticalMemento.h"
 #include "TacticalCommand.h"
@@ -58,6 +63,92 @@ void testFactory(LegionFactory* factory) {
 }
 
 
+void testStrategy() {
+    // Create factories for different terrains
+    LegionFactory* woodlandFactory = new WoodlandFactory();
+    LegionFactory* riverbankFactory = new RiverbankFactory();
+    LegionFactory* openFieldFactory = new OpenFieldFactory();
+
+    // Create units for each terrain
+    std::vector<LegionUnit*> woodlandUnits;
+    woodlandUnits.push_back(woodlandFactory->createInfantry());
+    woodlandUnits.push_back(woodlandFactory->createCavalry());
+    woodlandUnits.push_back(woodlandFactory->createArtillery());
+
+    std::vector<LegionUnit*> riverbankUnits;
+    riverbankUnits.push_back(riverbankFactory->createInfantry());
+    riverbankUnits.push_back(riverbankFactory->createCavalry());
+    riverbankUnits.push_back(riverbankFactory->createArtillery());
+
+    std::vector<LegionUnit*> openFieldUnits;
+    openFieldUnits.push_back(openFieldFactory->createInfantry());
+    openFieldUnits.push_back(openFieldFactory->createCavalry());
+    openFieldUnits.push_back(openFieldFactory->createArtillery());
+
+    // Create tactical command object
+    TacticalCommand command;
+
+    // Test Flanking strategy
+    std::cout << "Testing Flanking Strategy:\n";
+    command.setStrategy(new Flanking());
+    command.executeStrategy(woodlandUnits);
+
+    std::cout << "Executing Flanking strategy for Woodland units:\n";
+    command.chooseBestStrategy(woodlandUnits);
+    command.executeStrategy(woodlandUnits);
+    
+    std::cout << "Executing Flanking strategy for Riverbank units:\n";
+    command.chooseBestStrategy(riverbankUnits);
+    command.executeStrategy(riverbankUnits);
+    
+    std::cout << "Executing Flanking strategy for OpenField units:\n";
+    command.chooseBestStrategy(openFieldUnits);
+    command.executeStrategy(openFieldUnits);
+
+    // Test Fortification strategy
+    std::cout << "Testing Fortification Strategy:\n";
+    command.setStrategy(new Fortification());
+    command.executeStrategy(woodlandUnits);
+
+    std::cout << "Executing Fortification strategy for Woodland units:\n";
+    command.chooseBestStrategy(woodlandUnits);
+    command.executeStrategy(woodlandUnits);
+    
+    std::cout << "Executing Fortification strategy for Riverbank units:\n";
+    command.chooseBestStrategy(riverbankUnits);
+    command.executeStrategy(riverbankUnits);
+    
+    std::cout << "Executing Fortification strategy for OpenField units:\n";
+    command.chooseBestStrategy(openFieldUnits);
+    command.executeStrategy(openFieldUnits);
+
+    // Test Ambush strategy
+    std::cout << "Testing Ambush Strategy:\n";
+    command.setStrategy(new Ambush());
+    command.executeStrategy(woodlandUnits);
+
+    std::cout << "Executing Ambush strategy for Woodland units:\n";
+    command.chooseBestStrategy(woodlandUnits);
+    command.executeStrategy(woodlandUnits);
+    
+    std::cout << "Executing Ambush strategy for Riverbank units:\n";
+    command.chooseBestStrategy(riverbankUnits);
+    command.executeStrategy(riverbankUnits);
+    
+    std::cout << "Executing Ambush strategy for OpenField units:\n";
+    command.chooseBestStrategy(openFieldUnits);
+    command.executeStrategy(openFieldUnits);
+
+    // Clean up
+    delete woodlandFactory;
+    delete riverbankFactory;
+    delete openFieldFactory;
+    
+    for (auto unit : woodlandUnits) delete unit;
+    for (auto unit : riverbankUnits) delete unit;
+    for (auto unit : openFieldUnits) delete unit;
+}
+
 
 int main() {
 
@@ -75,12 +166,16 @@ int main() {
     OpenFieldFactory openFieldFactory;
     testFactory(&openFieldFactory);
 
+
+    cout << "===== Strategy Design Pattern Testing =====" << endl;
+
+    testStrategy();
+
     cout << "===== Testing Completed =====" << endl;
 
 
 
 
-    
     return 0;
 }
 

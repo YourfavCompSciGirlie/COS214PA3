@@ -8,7 +8,7 @@
 class Flanking : public BattleStrategy {
     
     public:
-        virtual void engage();
+        virtual void engage(std::vector<LegionUnit*> units);
 };
 
 #endif // FLANKING_H

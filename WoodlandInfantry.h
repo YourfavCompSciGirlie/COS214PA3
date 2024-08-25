@@ -7,10 +7,22 @@
 
 class WoodlandInfantry : public Infantry {
 
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
+
     public:
         // Added OWN functions
         WoodlandInfantry();
         ~WoodlandInfantry();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
 
         void move();
         void attack();

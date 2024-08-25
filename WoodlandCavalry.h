@@ -7,10 +7,22 @@
 
 class WoodlandCavalry : public Cavalry {
 
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
+
     public:
         // Added OWN functions
         WoodlandCavalry();
         ~WoodlandCavalry();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
 
         void move();
         void attack();

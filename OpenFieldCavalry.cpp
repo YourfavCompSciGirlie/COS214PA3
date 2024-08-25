@@ -6,6 +6,11 @@ using namespace std;
 
 // Constructor
 OpenFieldCavalry::OpenFieldCavalry() {
+    this->mobility = 9;
+    this->defense = 5;
+    this->attackStrength = 7;
+    this->terrainAdaptability = 6;
+
     cout << "OpenField Cavalry: Ready to charge across the open fields, poised for rapid maneuvers..." << endl;
 }
 
@@ -13,6 +18,29 @@ OpenFieldCavalry::OpenFieldCavalry() {
 // Destructor
 OpenFieldCavalry::~OpenFieldCavalry() {
     cout << "OpenField Cavalry: Returning from the field, mission complete with a swift retreat..." << endl;
+}
+
+
+int OpenFieldCavalry::getMobility() {
+    return mobility;
+}
+
+
+
+int OpenFieldCavalry::getDefense() {
+    return defense;
+}
+
+
+
+int OpenFieldCavalry::getAttackStrength() {
+    return attackStrength;
+}
+
+
+
+int OpenFieldCavalry::getTerrainAdaptability() {
+    return terrainAdaptability;
 }
 
 
