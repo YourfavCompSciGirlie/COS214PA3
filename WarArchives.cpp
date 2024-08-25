@@ -14,7 +14,7 @@ void WarArchives::removeTacticalMemento(string label)
 
 TacticalMemento *WarArchives::getTacticalMemento(string label)
 {
-   if(label != "") {
+   if (label != "") {
       return mementos[label];
    }
 }

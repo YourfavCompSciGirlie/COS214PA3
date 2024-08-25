@@ -6,12 +6,12 @@
 class TacticalMemento
 {
    private:
-      BattleStrategy* strategy
+      BattleStrategy* strategy;
    public: 
       TacticalMemento();
       void storeStrategy(BattleStrategy* strategy);
       virtual ~TacticalMemento();
-      BattleStategy* getStrategy();
+      BattleStrategy* getStrategy();
       
 
 };

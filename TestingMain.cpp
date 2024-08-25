@@ -1,23 +1,88 @@
 // // Still under construction
 
-// #include <iostream>
-// #include <vector>
+#include <iostream>
+#include <vector>
 
-// #include "LegionFactory.h"
-// #include "LegionUnit.h"
-// #include "Infantry.h"
-// #include "Cavalry.h"
-// #include "Artillery.h"
-// #include "TacticalCommand.h"
-// #include "BattleStrategy.h"
-// #include "TacticalMemento.h"
-// #include "TacticalCommand.h"
-// #include "WarArchives.h"
+#include "LegionFactory.h"
+
+#include "RiverbankFactory.h"
+#include "WoodlandFactory.h"
+#include "OpenFieldFactory.h"
+#include "LegionUnit.h"
+
+#include "Infantry.h"
+#include "Cavalry.h"
+#include "Artillery.h"
+#include "TacticalCommand.h"
+#include "BattleStrategy.h"
+#include "TacticalMemento.h"
+#include "TacticalCommand.h"
+#include "WarArchives.h"
+
+using namespace std;
 
 
-// using namespace std;
+void testFactory(LegionFactory* factory) {
+    cout << "Testing factory: " << typeid(*factory).name() << endl;
+
+    // Create units using the factory
+    Infantry* infantry = factory->createInfantry();
+    Cavalry* cavalry = factory->createCavalry();
+    Artillery* artillery = factory->createArtillery();
+
+    // Test move and attack for Infantry
+    cout << "Testing Infantry unit:" << endl;
+    infantry->move();
+    infantry->attack();
+
+    // Test move and attack for Cavalry
+    cout << "\nTesting Cavalry unit:" << endl;
+    cavalry->move();
+    cavalry->attack();
+
+    // Test move and attack for Artillery
+    cout << "\nTesting Artillery unit:" << endl;
+    artillery->move();
+    artillery->attack();
+
+    // Test deployArtillery specific to terrain challenges
+    cout << "\nTesting deployArtillery:" << endl;
+    factory->deployArtillery();
+
+    // Clean up
+    delete infantry;
+    delete cavalry;
+    delete artillery;
+
+    cout << "Finished testing factory: " << typeid(*factory).name() << "\n" << endl;
+}
 
 
+
+int main() {
+
+    cout << "===== Abstract Factory Design Pattern Testing =====" << endl;
+
+    // Test RiverbankFactory
+    RiverbankFactory riverbankFactory;
+    testFactory(&riverbankFactory);
+
+    // Test WoodlandFactory
+    WoodlandFactory woodlandFactory;
+    testFactory(&woodlandFactory);
+
+    // Test OpenFieldFactory
+    OpenFieldFactory openFieldFactory;
+    testFactory(&openFieldFactory);
+
+    cout << "===== Testing Completed =====" << endl;
+
+
+
+
+    
+    return 0;
+}
 
 
 // // Testing main function

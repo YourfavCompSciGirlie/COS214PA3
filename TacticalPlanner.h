@@ -1,7 +1,7 @@
 #ifndef TACTICALPLANNER_H
 #define TACTICALPLANNER_H
 
-#include "BattleStrategy"
+#include "BattleStrategy.h"
 #include <string>
 #include <vector>
 #include "TacticalMemento.h"
