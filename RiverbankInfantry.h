@@ -1,13 +1,19 @@
-#ifndef RIVERBANK_INFANTRY_H
-#define RIVERBANK_INFANTRY_H
+#ifndef RIVERBANKINFANTRY_H
+#define RIVERBANKINFANTRY_H
 
 #include "Infantry.h"
+
+using namespace std;
 
 class RiverbankInfantry : public Infantry {
     
     public:
-        virtual void move();
-        virtual void attack();
+    // Added OWN functions
+        RiverbankInfantry();
+        ~RiverbankInfantry();
+
+        void move();
+        void attack();
 };
 
-#endif // RIVERBANK_INFANTRY_H
+#endif // RIVERBANKINFANTRY_H

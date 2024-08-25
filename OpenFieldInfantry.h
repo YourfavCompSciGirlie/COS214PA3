@@ -1,13 +1,19 @@
-#ifndef OPENFIELD_INFANTRY_H
-#define OPENFIELD_INFANTRY_H
+#ifndef OPENFIELDINFANTRY_H
+#define OPENFIELDINFANTRY_H
 
 #include "Infantry.h"
+
+#include <iostream>
 
 class OpenFieldInfantry : public Infantry {
 
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        OpenFieldInfantry();
+        ~OpenFieldInfantry();
+
+        void move();
+        void attack();
 };
 
-#endif // OPENFIELD_INFANTRY_H
+#endif // OPENFIELDINFANTRY_H

@@ -1,13 +1,19 @@
-#ifndef RIVERBANK_ARTILLERY_H
-#define RIVERBANK_ARTILLERY_H
+#ifndef RIVERBANKARTILLERY_H
+#define RIVERBANKARTILLERY_H
 
 #include "Artillery.h"
+
+#include <iostream>
 
 class RiverbankArtillery : public Artillery {
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN function
+        RiverbankArtillery();
+        ~RiverbankArtillery();
+
+        void move();
+        void attack();
 };
 
-#endif // RIVERBANK_ARTILLERY_H
+#endif // RIVERBANKARTILLERY_H

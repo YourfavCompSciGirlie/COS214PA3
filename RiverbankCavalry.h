@@ -1,13 +1,19 @@
-#ifndef RIVERBANK_CAVALRY_H
-#define RIVERBANK_CAVALRY_H
+#ifndef RIVERBANKCAVALRY_H
+#define RIVERBANKCAVALRY_H
 
 #include "Cavalry.h"
+
+#include <iostream>
 
 class RiverbankCavalry : public Cavalry {
 
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        RiverbankCavalry();
+        ~RiverbankCavalry();
+
+        void move();
+        void attack();
 };
 
-#endif // RIVERBANK_CAVALRY_H
+#endif // RIVERBANKCAVALRY_H

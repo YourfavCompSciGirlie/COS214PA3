@@ -1,13 +1,19 @@
-#ifndef WOODLAND_CAVALRY_H
-#define WOODLAND_CAVALRY_H
+#ifndef WOODLANDCAVALRY_H
+#define WOODLANDCAVALRY_H
 
 #include "Cavalry.h"
+
+#include <iostream>
 
 class WoodlandCavalry : public Cavalry {
 
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        WoodlandCavalry();
+        ~WoodlandCavalry();
+
+        void move();
+        void attack();
 };
 
-#endif // WOODLAND_CAVALRY_H
+#endif // WOODLANDCAVALRY_H

@@ -1,13 +1,19 @@
-#ifndef WOODLAND_INFANTRY_H
-#define WOODLAND_INFANTRY_H
+#ifndef WOODLANDINFANTRY_H
+#define WOODLANDINFANTRY_H
 
 #include "Infantry.h"
+
+#include <iostream>
 
 class WoodlandInfantry : public Infantry {
 
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        WoodlandInfantry();
+        ~WoodlandInfantry();
+
+        void move();
+        void attack();
 };
 
-#endif // WOODLAND_INFANTRY_H
+#endif // WOODLANDINFANTRY_H

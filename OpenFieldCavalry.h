@@ -1,13 +1,19 @@
-#ifndef OPENFIELD_CAVALRY_H
-#define OPENFIELD_CAVALRY_H
+#ifndef OPENFIELDCAVALRY_H
+#define OPENFIELDCAVALRY_H
 
 #include "Cavalry.h"
+
+#include <iostream>
 
 class OpenFieldCavalry : public Cavalry {
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        OpenFieldCavalry();
+        ~OpenFieldCavalry();
+
+        void move();
+        void attack();
 };
 
-#endif // OPENFIELD_CAVALRY_H
+#endif // OPENFIELDCAVALRY_H

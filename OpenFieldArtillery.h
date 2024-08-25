@@ -1,13 +1,19 @@
-#ifndef OPENFIELD_ARTILLERY_H
-#define OPENFIELD_ARTILLERY_H
+#ifndef OPENFIELDARTILLERY_H
+#define OPENFIELDARTILLERY_H
 
 #include "Artillery.h"
+
+#include <iostream>
 
 class OpenFieldArtillery : public Artillery {
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        OpenFieldArtillery();
+        ~OpenFieldArtillery();
+
+        void move();
+        void attack();
 };
 
-#endif // OPENFIELD_ARTILLERY_H
+#endif // OPENFIELDARTILLERY_H

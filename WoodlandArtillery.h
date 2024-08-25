@@ -1,13 +1,19 @@
-#ifndef WOODLAND_ARTILLERY_H
-#define WOODLAND_ARTILLERY_H
+#ifndef WOODLANDARTILLERY_H
+#define WOODLANDARTILLERY_H
 
 #include "Artillery.h"
+
+#include <iostream>
 
 class WoodlandArtillery : public Artillery {
 
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        WoodlandArtillery();
+        ~WoodlandArtillery();
+
+        void move();
+        void attack();
 };
 
-#endif // WOODLAND_ARTILLERY_H
+#endif // WOODLANDARTILLERY_H
