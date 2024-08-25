@@ -19,7 +19,7 @@ TacticalCommand::~TacticalCommand() {
 
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
-    // // Optionally delete old strategy if TacticalCommand owns it
+    // Optionally delete old strategy if TacticalCommand owns it
     if (strategy) {
         delete strategy; // Clean up the old strategy
     }

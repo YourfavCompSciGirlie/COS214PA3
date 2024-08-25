@@ -8,7 +8,7 @@
 class Fortification : public BattleStrategy {
     
     public:
-        virtual void engage(std::vector<LegionUnit*> units);
+        void engage(std::vector<LegionUnit*> units);
 };
 
 #endif // FORTIFICATION_H

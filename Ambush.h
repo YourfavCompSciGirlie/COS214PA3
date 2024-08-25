@@ -8,7 +8,7 @@
 class Ambush : public BattleStrategy {
     
     public:
-        virtual void engage(std::vector<LegionUnit*> units);
+        void engage(std::vector<LegionUnit*> units);
 };
 
 #endif // AMBUSH_H
