@@ -1,19 +1,25 @@
 // Class definition for 4. Abstract Factory
 
-#ifndef RIVERBANK_FACTORY_H
-#define RIVERBANK_FACTORY_H
+#ifndef RIVERBANKFACTORY_H
+#define RIVERBANKFACTORY_H
 
 #include "LegionFactory.h"
 #include "RiverbankInfantry.h"
 #include "RiverbankCavalry.h"
 #include "RiverbankArtillery.h"
 
+using namespace std;
+
 class RiverbankFactory : public LegionFactory {
 
     public:
-        virtual Infantry* createInfantry();
-        virtual Cavalry* createCavalry();
-        virtual Artillery* createArtillery();
+        // Added OWN functions
+        RiverbankFactory();
+        ~RiverbankFactory();
+
+        Infantry* createInfantry();
+        Cavalry* createCavalry();
+        Artillery* createArtillery();
 };
 
-#endif // RIVERBANK_FACTORY_H
+#endif // RIVERBANKFACTORY_H
