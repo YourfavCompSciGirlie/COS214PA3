@@ -33,3 +33,10 @@ Artillery* RiverbankFactory::createArtillery() {
     cout << "Creating Riverbank Artillery unit." << endl;
     return new RiverbankArtillery();
 }
+
+
+
+// Deploy specific artillery for Riverbank terrain
+void RiverbankFactory::deployArtillery() {
+    cout << "Deploying artillery adapted for riverbank conditions: Amphibious and water-resistant systems." << endl;
+}

@@ -20,6 +20,8 @@ class WoodlandFactory : public LegionFactory {
         Infantry* createInfantry();
         Cavalry* createCavalry();
         Artillery* createArtillery();
+
+        void deployArtillery();
 };
 
 #endif // WOODLANDFACTORY_H

@@ -34,3 +34,10 @@ Artillery* WoodlandFactory::createArtillery() {
     cout << "Creating Woodland Artillery unit." << endl;
     return new WoodlandArtillery();
 }
+
+
+
+// Deploy specific artillery for Woodland terrain
+void WoodlandFactory::deployArtillery() {
+    cout << "Deploying artillery adapted for woodland conditions: Camouflaged and mobile systems." << endl;
+}

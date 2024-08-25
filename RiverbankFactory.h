@@ -20,6 +20,8 @@ class RiverbankFactory : public LegionFactory {
         Infantry* createInfantry();
         Cavalry* createCavalry();
         Artillery* createArtillery();
+
+        void deployArtillery();
 };
 
 #endif // RIVERBANKFACTORY_H

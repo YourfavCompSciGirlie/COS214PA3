@@ -34,3 +34,10 @@ Artillery* OpenFieldFactory::createArtillery() {
     cout << "Creating OpenField Artillery unit." << endl;
     return new OpenFieldArtillery();
 }
+
+
+
+// Deploy specific artillery for OpenField terrain
+void OpenFieldFactory::deployArtillery() {
+    cout << "Deploying artillery adapted for open field conditions: Long-range and heavy systems." << endl;
+}

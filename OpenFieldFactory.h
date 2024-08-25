@@ -20,6 +20,8 @@ class OpenFieldFactory : public LegionFactory {
         Infantry* createInfantry();
         Cavalry* createCavalry();
         Artillery* createArtillery();
+
+        void deployArtillery();
 };
 
 #endif // OPENFIELDFACTORY_H
