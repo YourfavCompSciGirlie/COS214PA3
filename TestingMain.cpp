@@ -167,11 +167,11 @@ int main() {
     testFactory(&openFieldFactory);
 
 
-    cout << "===== Strategy Design Pattern Testing =====" << endl;
+    cout << "===== Strategy Design Pattern Testing =============" << endl;
 
     testStrategy();
 
-    cout << "===== Testing Completed =====" << endl;
+    cout << "===== End of All Tests =====" << endl;
 
 
 
@@ -182,43 +182,7 @@ int main() {
 
 // // Testing main function
 // int main() {
-//     // Abstract Factory Testing
-//     std::cout << "=== Abstract Factory Testing ===\n";
-//     LegionFactory* factory = new WoodlandFactory();
-//     Infantry* infantry = factory->createInfantry();
-//     Cavalry* cavalry = factory->createCavalry();
-//     Artillery* artillery = factory->createArtillery();
 
-//     infantry->move();
-//     infantry->attack();
-//     cavalry->move();
-//     cavalry->attack();
-//     artillery->move();
-//     artillery->attack();
-
-//     delete factory;
-//     delete infantry;
-//     delete cavalry;
-//     delete artillery;
-
-//     std::cout << "=== End of Abstract Factory Testing ===\n\n";
-
-//     // Strategy Pattern Testing
-//     std::cout << "=== Strategy Pattern Testing ===\n";
-//     TacticalCommand command;
-//     BattleStrategy* flanking = new Flanking();
-//     BattleStrategy* fortification = new Fortification();
-
-//     command.setStrategy(flanking);
-//     command.executeStrategy();
-
-//     command.setStrategy(fortification);
-//     command.executeStrategy();
-
-//     delete flanking;
-//     delete fortification;
-
-//     std::cout << "=== End of Strategy Pattern Testing ===\n\n";
 
 //     // Memento Pattern Testing
 //     std::cout << "=== Memento Pattern Testing ===\n";

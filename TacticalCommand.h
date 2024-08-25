@@ -21,7 +21,7 @@ class TacticalCommand {
         
         void setStrategy(BattleStrategy* s);
         void executeStrategy(std::vector<LegionUnit*> units);
-        void chooseBestStrategy(std::vector<LegionUnit*> units);  // Placeholder for future implementation
+        void chooseBestStrategy(std::vector<LegionUnit*> units);
 };
 
 #endif // TACTICALCOMMAND_H
