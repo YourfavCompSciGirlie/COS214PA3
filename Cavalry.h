@@ -2,12 +2,16 @@
 #define CAVALRY_H
 
 #include "LegionUnit.h"
+
 #include <iostream>
 
 class Cavalry : public LegionUnit {
 
     public:
-        virtual ~Cavalry() {}
+        // Added OWN function
+        Cavalry();
+        virtual ~Cavalry();
+
         virtual void move() = 0;
         virtual void attack() = 0;
 };

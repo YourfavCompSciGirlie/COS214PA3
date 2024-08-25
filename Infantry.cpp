@@ -1,12 +1,17 @@
 #include "Infantry.h"
 
+#include <iostream>
 
-void Infantry::move() {
-    std::cout << "Infantry advancing forward with steady steps." << std::endl;
+using namespace std;
+
+
+// Constructor
+Infantry::Infantry() {
+    cout << "Infantry: Ready to take the battlefield!" << endl;
 }
 
 
-
-void Infantry::attack() {
-    std::cout << "Infantry engaging in close combat with sword and shield." << std::endl;
+// Destructor
+Infantry::~Infantry() {
+    cout << "Infantry: Heading back to the barracks." << endl;
 }

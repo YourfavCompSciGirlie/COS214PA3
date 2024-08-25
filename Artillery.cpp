@@ -1,12 +1,17 @@
 #include "Artillery.h"
 
+#include <iostream>
 
-void Artillery::move() {
-    std::cout << "Artillery positioning itself for a long-range attack." << std::endl;
+using namespace std;
+
+
+// Constructor
+Artillery::Artillery() {
+    cout << "Artillery: Ready to unleash a storm of firepower!" << endl;
 }
 
 
-
-void Artillery::attack() {
-    std::cout << "Artillery launching a barrage of explosive projectiles." << std::endl;
+// Destructor
+Artillery::~Artillery() {
+    cout << "Artillery: Cease fire and pack up." << endl;
 }
