@@ -201,12 +201,12 @@ void testMementoPattern() {
     // command->executeStrategy() //needs a legion
 
     // Clean up
-    delete flanking;
-    delete fortification;
-    delete ambush;
-    delete planner;
-    delete archives;
-    delete command;
+    // delete flanking;
+    // delete fortification;
+    // delete ambush;
+    // delete planner;
+    // delete archives;
+    // delete command;
 }
 
 
@@ -231,9 +231,9 @@ void testIndividualUnits() {
     artillery->attack();
 
     // Clean up
-    delete infantry;
-    delete cavalry;
-    delete artillery;
+    // delete infantry;
+    // delete cavalry;
+    // delete artillery;
 }
 
 void testCompositeLegion() {
@@ -257,7 +257,7 @@ void testCompositeLegion() {
     legion->move();
     legion->attack();
 
-    delete legion;
+    // delete legion;
 }
 
 void testNestedLegions() {
@@ -288,7 +288,7 @@ void testNestedLegions() {
     mainLegion->move();
     mainLegion->attack();
 
-    delete mainLegion;
+    // delete mainLegion;
 }
 
 void testRemoveFunctionality() {
@@ -315,7 +315,7 @@ void testRemoveFunctionality() {
     legion->move();
     legion->attack();
 
-    delete legion;
+    // delete legion;
 }
 
 
