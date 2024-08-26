@@ -9,5 +9,6 @@ TacticalMemento *BattleStrategy::saveToMemento()
 
 void BattleStrategy::restoreFromMemento(TacticalMemento *memento)
 {
-    BattleStrategy* savedStrategy = memento->getStrategy();
+    // BattleStrategy* savedStrategy = memento->getStrategy();
+    memento->getStrategy();
 }
