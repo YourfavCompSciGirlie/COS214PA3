@@ -23,8 +23,6 @@ class TacticalCommand { // context for strategy and client for memento
         ~TacticalCommand();  // Destructor to clean up strategy
         
         void setStrategy(BattleStrategy* s);
-        void restoreStrategy(const std::string& label);
-        void saveStrategy(const std::string& label);
         void executeStrategy(std::vector<LegionUnit*> units);
         void chooseBestStrategy(std::vector<LegionUnit*> units);
 };

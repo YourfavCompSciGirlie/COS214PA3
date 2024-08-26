@@ -14,3 +14,15 @@ void TacticalPlanner::restoreMemento(TacticalMemento* memento)
       this->currentStrategy = memento->getStrategy();
    }
 }
+
+void TacticalPlanner::setStrategy(BattleStrategy *strategy)
+{
+   if(strategy != NULL) {
+      this->currentStrategy = strategy;
+   }
+}
+
+BattleStrategy *TacticalPlanner::getStrategy()
+{
+   return this->currentStrategy;
+}

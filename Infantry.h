@@ -4,6 +4,10 @@
 #include "LegionUnit.h"
 #include "UnitComponent.h"
 #include <iostream>
+#include <vector>
+using namespace std;
+
+class UnitComponent;
 
 class Infantry : public LegionUnit, public UnitComponent {
     protected:
@@ -13,9 +17,7 @@ class Infantry : public LegionUnit, public UnitComponent {
         void add(UnitComponent* unit);
         void remove(UnitComponent* unit);
         // Added OWN functions
-        Infantry();
-        virtual ~Infantry();
-
+       
         virtual void move() = 0;
         virtual void attack() = 0;
 

@@ -16,6 +16,6 @@ void Cavalry::remove(UnitComponent *unit)
 }
 
 // Destructor
-Cavalry::~Cavalry() {
-    cout << "Cavalry: Dismounting and heading to rest." << endl;
-}
+// Cavalry::~Cavalry() {
+//     cout << "Cavalry: Dismounting and heading to rest." << endl;
+// }

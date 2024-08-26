@@ -25,7 +25,9 @@
 #include "WarArchives.h"
 
 #include "Legion.h"
-
+#include "InfantryLegion.h"
+#include "ArtilleryLegion.h"
+#include "CavalryLegion.h"
 
 using namespace std;
 
@@ -196,7 +198,7 @@ void testMementoPattern() {
 
     // Print restored strategy
     std::cout << "Restored Strategy: Fortification" << std::endl;
-    command->executeStrategy(/* some units */);
+    // command->executeStrategy() //needs a legion
 
     // Clean up
     delete flanking;
@@ -243,9 +245,10 @@ void testCompositeLegion() {
     UnitComponent* artillery1 = new OpenFieldArtillery();
 
     // Create a composite legion
-    Legion* legion = new Legion();
+    Legion* legion = new InfantryLegion();
 
-    // Add individual units to the legion
+
+    // Add individual units to the legion, change all to Infantry as that is the group
     legion->add(infantry1);
     legion->add(cavalry1);
     legion->add(artillery1);
@@ -272,7 +275,7 @@ void testNestedLegions() {
     // Create second sub-legion with more units
     UnitComponent* artillery1 = new OpenFieldArtillery();
     UnitComponent* infantry2 = new OpenFieldInfantry();
-    Legion* subLegion2 = new Legion();
+    Legion* subLegion2 = new ArtilleryLegion(); //change here as well
     subLegion2->add(artillery1);
     subLegion2->add(infantry2);
 
@@ -297,7 +300,7 @@ void testRemoveFunctionality() {
     UnitComponent* artillery1 = new OpenFieldArtillery();
 
     // Create a legion and add units
-    Legion* legion = new Legion();
+    Legion* legion = new InfantryLegion();
     legion->add(infantry1);
     legion->add(cavalry1);
     legion->add(artillery1);

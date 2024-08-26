@@ -13,6 +13,8 @@ class TacticalPlanner
    public:
       TacticalMemento* createMemento();
       void restoreMemento(TacticalMemento* memento);
+      void setStrategy(BattleStrategy* strategy);
+      BattleStrategy* getStrategy();
 
 };
 

@@ -8,7 +8,9 @@
 #include <string>
 #include <vector>
 #include "TacticalMemento.h"
+using namespace std;
 
+class TacticalMemento;
 
 class BattleStrategy {
     private:

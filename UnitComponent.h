@@ -3,17 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include "Infantry.h"
-#include "Cavalry.h"
-#include "Artillery.h"
+// #include "Infantry.h"
+// #include "Cavalry.h"
+// #include "Artillery.h"
 
 /*This is like a blueprint that tells us what both individual items (leaves) and groups of items (composites) should be able to do. 
 It lists the things they all have in common.*/
 
 class UnitComponent
 {
-   private:
-      /* data */
    public:
       virtual void move() = 0;
       virtual void attack() = 0;

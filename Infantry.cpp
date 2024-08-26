@@ -13,3 +13,4 @@ void Infantry::remove(UnitComponent* unit) {
     }
    // terrainUnits.erase(std::remove(terrainUnits.begin(), terrainUnits.end(), component), terrainUnits.end());
 }
+

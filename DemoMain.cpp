@@ -15,12 +15,14 @@
 #include "Cavalry.h"
 #include "Artillery.h"
 #include "InfantryLegion.h"
+#include "ArtilleryLegion.h"
+#include "CavalryLegion.h"
 
 #include <iostream>
 using namespace std;
 
 
-void testAbstractFactory() {
+void testAbstract() {
     LegionFactory* woodlandFactory = new WoodlandFactory();
     LegionFactory* riverbankFactory = new RiverbankFactory();
     LegionFactory* openFieldFactory = new OpenFieldFactory();
@@ -57,7 +59,7 @@ void testAbstractFactory() {
     delete openFieldFactory;
 }
 
-void testMementoPattern() {
+void testMemento() {
     // Example strategy setup
 // Add units to vector
     LegionFactory* woodlandFactory = new WoodlandFactory();
@@ -78,7 +80,7 @@ Infantry* infantry3 = woodlandFactory->createInfantry();
 
     // Step 4: Save the current strategy to a memento
     std::cout << "Saving initial strategy..." << std::endl;
-    command->saveStrategy("InitialStrategy");
+   
 
     // Step 5: Change to a different strategy
     std::cout << "Changing to a new strategy (Flanking)..." << std::endl;
@@ -87,11 +89,10 @@ Infantry* infantry3 = woodlandFactory->createInfantry();
 
     // Step 6: Save this new strategy to a memento
     std::cout << "Saving new strategy..." << std::endl;
-    command->saveStrategy("FlankingStrategy");
+    
 
     // Step 7: Restore the original strategy from memento
     std::cout << "Restoring original strategy..." << std::endl;
-    command->restoreStrategy("InitialStrategy");
     command->executeStrategy(units);
 
     // Step 8: Test the function that chooses the best strategy based on the units' attributes
@@ -100,17 +101,11 @@ Infantry* infantry3 = woodlandFactory->createInfantry();
 
     // Step 9: Test restoring a successful strategy from the War Archives (caretaker)
     std::cout << "Restoring saved FlankingStrategy from archives..." << std::endl;
-    command->restoreStrategy("FlankingStrategy");
     command->executeStrategy(units);
 
-    // Cleanup
-    delete infantry1;
-   delete infantry1;
-   delete infantry1;
-    delete command;
 }
 
-void testCompositePattern() {
+void testComposite() {
     // Create individual units (leaves)
    LegionFactory* woodlandFactory = new WoodlandFactory();
 
@@ -143,16 +138,12 @@ void testCompositePattern() {
     infantryLegion->attack();  // Should execute attack for all units in the legion and sublegion
 
     // Clean up
-    delete infantry1;
-     delete infantry2;
-      delete infantry3;
-    delete subLegion;
-    delete infantryLegion;
+   
 }
 
 int main() {
 
-   testCompositePattern()
+   testComposite();
 
 
    return 0;

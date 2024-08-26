@@ -1,0 +1,74 @@
+==28552== Memcheck, a memory error detector
+==28552== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==28552== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==28552== Command: ./demo
+==28552== 
+==28552== 
+==28552== HEAP SUMMARY:
+==28552==     in use at exit: 280 bytes in 8 blocks
+==28552==   total heap usage: 13 allocs, 5 frees, 75,072 bytes allocated
+==28552== 
+==28552== 8 bytes in 1 blocks are indirectly lost in loss record 1 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x10F4B1: __gnu_cxx::new_allocator<UnitComponent*>::allocate(unsigned long, void const*) (new_allocator.h:127)
+==28552==    by 0x10F25F: std::allocator_traits<std::allocator<UnitComponent*> >::allocate(std::allocator<UnitComponent*>&, unsigned long) (alloc_traits.h:464)
+==28552==    by 0x10F02F: std::_Vector_base<UnitComponent*, std::allocator<UnitComponent*> >::_M_allocate(unsigned long) (stl_vector.h:346)
+==28552==    by 0x10E9AC: void std::vector<UnitComponent*, std::allocator<UnitComponent*> >::_M_realloc_insert<UnitComponent* const&>(__gnu_cxx::__normal_iterator<UnitComponent**, std::vector<UnitComponent*, std::allocator<UnitComponent*> > >, UnitComponent* const&) (vector.tcc:440)
+==28552==    by 0x10E677: std::vector<UnitComponent*, std::allocator<UnitComponent*> >::push_back(UnitComponent* const&) (stl_vector.h:1198)
+==28552==    by 0x11022B: Legion::add(UnitComponent*) (Legion.cpp:6)
+==28552==    by 0x10CDA9: testComposite() (DemoMain.cpp:128)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 8 bytes in 1 blocks are definitely lost in loss record 2 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x10CC19: testComposite() (DemoMain.cpp:110)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 32 bytes in 1 blocks are indirectly lost in loss record 3 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x10F4B1: __gnu_cxx::new_allocator<UnitComponent*>::allocate(unsigned long, void const*) (new_allocator.h:127)
+==28552==    by 0x10F25F: std::allocator_traits<std::allocator<UnitComponent*> >::allocate(std::allocator<UnitComponent*>&, unsigned long) (alloc_traits.h:464)
+==28552==    by 0x10F02F: std::_Vector_base<UnitComponent*, std::allocator<UnitComponent*> >::_M_allocate(unsigned long) (stl_vector.h:346)
+==28552==    by 0x10E9AC: void std::vector<UnitComponent*, std::allocator<UnitComponent*> >::_M_realloc_insert<UnitComponent* const&>(__gnu_cxx::__normal_iterator<UnitComponent**, std::vector<UnitComponent*, std::allocator<UnitComponent*> > >, UnitComponent* const&) (vector.tcc:440)
+==28552==    by 0x10E677: std::vector<UnitComponent*, std::allocator<UnitComponent*> >::push_back(UnitComponent* const&) (stl_vector.h:1198)
+==28552==    by 0x11022B: Legion::add(UnitComponent*) (Legion.cpp:6)
+==28552==    by 0x10CD41: testComposite() (DemoMain.cpp:123)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 32 bytes in 1 blocks are indirectly lost in loss record 4 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x10CD4B: testComposite() (DemoMain.cpp:127)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 56 bytes in 1 blocks are indirectly lost in loss record 5 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x1150C5: WoodlandFactory::createInfantry() (WoodlandFactory.cpp:21)
+==28552==    by 0x10CC3F: testComposite() (DemoMain.cpp:112)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 56 bytes in 1 blocks are indirectly lost in loss record 6 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x1150C5: WoodlandFactory::createInfantry() (WoodlandFactory.cpp:21)
+==28552==    by 0x10CC5A: testComposite() (DemoMain.cpp:113)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 56 bytes in 1 blocks are indirectly lost in loss record 7 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x1150C5: WoodlandFactory::createInfantry() (WoodlandFactory.cpp:21)
+==28552==    by 0x10CC75: testComposite() (DemoMain.cpp:114)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== 272 (32 direct, 240 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+==28552==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==28552==    by 0x10CC83: testComposite() (DemoMain.cpp:118)
+==28552==    by 0x10CEA4: main (DemoMain.cpp:146)
+==28552== 
+==28552== LEAK SUMMARY:
+==28552==    definitely lost: 40 bytes in 2 blocks
+==28552==    indirectly lost: 240 bytes in 6 blocks
+==28552==      possibly lost: 0 bytes in 0 blocks
+==28552==    still reachable: 0 bytes in 0 blocks
+==28552==         suppressed: 0 bytes in 0 blocks
+==28552== 
+==28552== For lists of detected and suppressed errors, rerun with: -s
+==28552== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

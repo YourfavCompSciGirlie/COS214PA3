@@ -6,20 +6,20 @@ CXXFLAGS = -std=c++11 -g -Wall -Wextra -pedantic
 TESTING_TARGET = testing
 DEMO_TARGET = demo
 
-# Find all .cpp files and convert them to .o files
-SRCS = $(wildcard *.cpp)
-OBJS = $(SRCS:.cpp=.o)
+# Find all .cpp files excluding main files
+COMMON_SRCS = $(filter-out TestingMain.cpp DemoMain.cpp, $(wildcard *.cpp))
+COMMON_OBJS = $(COMMON_SRCS:.cpp=.o)
 
 # Default target
 all: $(TESTING_TARGET) $(DEMO_TARGET)
 
 # Build the testing executable
-$(TESTING_TARGET): TestingMain.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TESTING_TARGET) TestingMain.cpp $(OBJS)
+$(TESTING_TARGET): TestingMain.o $(COMMON_OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TESTING_TARGET) TestingMain.o $(COMMON_OBJS)
 
 # Build the demo executable
-$(DEMO_TARGET): DemoMain.cpp $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(DEMO_TARGET) DemoMain.cpp $(OBJS)
+$(DEMO_TARGET): DemoMain.o $(COMMON_OBJS)
+	$(CXX) $(CXXFLAGS) -o $(DEMO_TARGET) DemoMain.o $(COMMON_OBJS)
 
 # Compile the source files into object files
 %.o: %.cpp
@@ -43,7 +43,7 @@ demo_debug: $(DEMO_TARGET)
 
 # Clean up the build files
 clean:
-	rm -f $(OBJS) $(TESTING_TARGET) $(DEMO_TARGET) valgrind_log.txt gdb_log.txt
+	rm -f $(COMMON_OBJS) TestingMain.o DemoMain.o $(TESTING_TARGET) $(DEMO_TARGET) valgrind_log.txt gdb_log.txt
 
 # Phony targets
 .PHONY: all run demo_run debug demo_debug clean
