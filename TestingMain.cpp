@@ -1,5 +1,3 @@
-// // Still under construction
-
 #include <iostream>
 #include <vector>
 
