@@ -279,6 +279,7 @@ void testStrategy() {
     // Test Flanking strategy
     printPattern("Setting Flanking Strategy:", red);
     command.setStrategy(new Flanking());
+  //  command.chooseBestStrategy(riverbankUnits);
     command.executeStrategy(riverbankUnits);
 
     // Test Fortification strategy
@@ -299,17 +300,17 @@ void testStrategy() {
     // Test Flanking strategy
     printPattern("Setting Flanking Strategy:", red);
     command.setStrategy(new Flanking());
-    command.executeStrategy(openFieldUnits);
+//    command.executeStrategy(openFieldUnits);
 
     // Test Fortification strategy
     printPattern("Setting Fortification Strategy:", green);
     command.setStrategy(new Fortification());
-    command.executeStrategy(openFieldUnits);
+   // command.executeStrategy(openFieldUnits);
 
     // Test Ambush strategy
     printPattern("Setting Ambush Strategy:", blue);
     command.setStrategy(new Ambush());
-    command.executeStrategy(openFieldUnits);
+//    command.executeStrategy(openFieldUnits);
 
     std::cout << pattern << std::endl;
 
@@ -317,10 +318,10 @@ void testStrategy() {
     printPattern("Cleaning up resources...", red);
     delete woodlandFactory;
     delete riverbankFactory;
-    delete openFieldFactory;
+ //   delete openFieldFactory;
     for (auto unit : woodlandUnits) delete unit;
     for (auto unit : riverbankUnits) delete unit;
-    for (auto unit : openFieldUnits) delete unit;
+  //  for (auto unit : openFieldUnits) delete unit;
     std::cout << green << "Cleanup completed. All resources have been successfully deleted." << reset << std::endl;
 }
 
@@ -329,8 +330,8 @@ int main() {
 
    // testComposite();
    // testAbstract();
-   testMemento();
-   //testStrategy();
+  // testMemento();
+   testStrategy();
    return 0;
   
 }
