@@ -21,11 +21,21 @@
 #include <iostream>
 using namespace std;
 
+#include <thread>
+#include <chrono>
+
 void printPattern(const std::string &pattern, const std::string &color)
 {
     std::cout << color << pattern << "\033[0m" << std::endl;
 }
 
+void typeEffect(const std::string& text, int delay = 50) {
+    for (char c : text) {
+        std::cout << c << std::flush;
+        std::this_thread::sleep_for(std::chrono::milliseconds(delay));
+    }
+    std::cout << std::endl;
+}
 
 void testAbstract() {
 const std::string red = "\033[31m";
@@ -35,41 +45,63 @@ const std::string red = "\033[31m";
     const std::string reset = "\033[0m";
     const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
 
+
+   std::string heading = "Abstract Factory Design Pattern";
+    std::string separator = std::string(30, '=');
+    cout << endl;
+cout << endl;
+printPattern(pattern, green);
+    typeEffect(separator);
+    typeEffect(heading + std::string(40- heading.length(), ' '));
+    typeEffect(separator);
+printPattern(pattern, green);
+cout << endl;
     // Create factories for different terrains
     printPattern("Creating Legion Factories...", blue);
     LegionFactory* woodlandFactory = new WoodlandFactory();
     LegionFactory* riverbankFactory = new RiverbankFactory();
     LegionFactory* openFieldFactory = new OpenFieldFactory();
     std::cout << blue << "Legion factories created for Woodland, Riverbank, and OpenField terrains." << reset << std::endl;
-
+ cout << endl;
+    
     // Create units for each terrain
     std::cout << blue << "Creating units for each terrain..." << reset << std::endl;
     Infantry* woodlandInfantry = woodlandFactory->createInfantry();
     Cavalry* woodlandCavalry = woodlandFactory->createCavalry();
     Artillery* woodlandArtillery = woodlandFactory->createArtillery();
-
+ cout << endl;
+    
     Infantry* riverbankInfantry = riverbankFactory->createInfantry();
     Cavalry* riverbankCavalry = riverbankFactory->createCavalry();
     Artillery* riverbankArtillery = riverbankFactory->createArtillery();
-
+ cout << endl;
+   
     Infantry* openFieldInfantry = openFieldFactory->createInfantry();
     Cavalry* openFieldCavalry = openFieldFactory->createCavalry();
     Artillery* openFieldArtillery = openFieldFactory->createArtillery();
 
+cout << endl;
     // Deploy Artillery for each terrain
     printPattern(pattern, yellow);
     std::cout << yellow << "Deploying artillery for Woodland terrain..." << reset << std::endl;
     woodlandFactory->deployArtillery();
     std::cout << yellow << "Woodland artillery deployed successfully!" << reset << std::endl;
 
+ cout << endl;
+    cout << endl;
+
     std::cout << yellow << "Deploying artillery for Riverbank terrain..." << reset << std::endl;
     riverbankFactory->deployArtillery();
     std::cout << yellow << "Riverbank artillery deployed successfully!" << reset << std::endl;
+
+ cout << endl;
+    cout << endl;
 
     std::cout << yellow << "Deploying artillery for OpenField terrain..." << reset << std::endl;
     openFieldFactory->deployArtillery();
     std::cout << yellow << "OpenField artillery deployed successfully!" << reset << std::endl;
 
+cout << endl;
     // Clean up
     printPattern(pattern, red);
     std::cout << red << "Cleaning up units and factories..." << reset << std::endl;
@@ -100,6 +132,17 @@ void testMemento() {
 
     LegionFactory* woodlandFactory = new WoodlandFactory();
 
+   std::string heading = "Memento Design Pattern";
+    std::string separator = std::string(30, '=');
+    cout << endl;
+cout << endl;
+printPattern(pattern, green);
+    typeEffect(separator);
+    typeEffect(heading + std::string(30- heading.length(), ' '));
+    typeEffect(separator);
+printPattern(pattern, green);
+cout << endl;
+
     Infantry* infantry1 = woodlandFactory->createInfantry();
     Infantry* infantry2 = woodlandFactory->createInfantry();
     Infantry* infantry3 = woodlandFactory->createInfantry();
@@ -108,15 +151,21 @@ void testMemento() {
 
     TacticalCommand* command = new TacticalCommand(new Ambush());
 
+cout << endl;
     // Initial Strategy
     printPattern(pattern, blue);
     std::cout << blue << "Ambush strategy deployed. Units are taking cover and preparing for a surprise attack!" << reset << std::endl;
     command->executeStrategy(units);
     std::cout << green << "The ambush was successful! Enemy forces are caught off guard." << reset << std::endl;
     
+     cout << endl;
+    cout << endl;
     // Save Initial Strategy
     printPattern(pattern, yellow);
     std::cout << yellow << "Strategy 'Ambush' is saved for future reference." << reset << std::endl;
+
+ cout << endl;
+    cout << endl;
 
     // Change Strategy
     printPattern(pattern, green);
@@ -124,6 +173,9 @@ void testMemento() {
     command->setStrategy(new Flanking());
     command->executeStrategy(units);
     std::cout << blue << "Flanking strategy executed. Enemy is now surrounded and facing increased pressure!" << reset << std::endl;
+
+ cout << endl;
+    cout << endl;
 
     // Save New Strategy
     printPattern(pattern, yellow);
@@ -135,11 +187,16 @@ void testMemento() {
     command->executeStrategy(units);
     std::cout << green << "Restoration complete. The ambush is back in action, catching the enemy by surprise once again!" << reset << std::endl;
 
+ cout << endl;
+    cout << endl;
+
     // Choose Best Strategy
     printPattern("Choosing the best strategy based on unit attributes...", blue);
     std::cout << blue << "Evaluating unit attributes to choose the most effective strategy for the current battle conditions." << reset << std::endl;
     command->chooseBestStrategy(units);
 
+ cout << endl;
+    cout << endl;
     // Restore Saved Strategy
     printPattern("Restoring saved FlankingStrategy from archives...", green);
     std::cout << green << "Restoring saved strategy 'Flanking' from archives. Preparing for an effective offensive!" << reset << std::endl;
@@ -160,9 +217,21 @@ const std::string red = "\033[31m";
     const std::string reset = "\033[0m";
     const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
 
+
     // Create individual units (leaves)
-    printPattern(pattern, blue);
+       std::string heading = "Composite Design Pattern";
+    std::string separator = std::string(30, '=');
+    cout << endl;
+cout << endl;
+printPattern(pattern, green);
+    typeEffect(separator);
+    typeEffect(heading + std::string(30- heading.length(), ' '));
+    typeEffect(separator);
+printPattern(pattern, green);
+cout << endl;
+
     LegionFactory* woodlandFactory = new WoodlandFactory();
+
 
     Infantry* infantry1 = woodlandFactory->createInfantry();
     Infantry* infantry2 = woodlandFactory->createInfantry();
@@ -182,6 +251,7 @@ const std::string red = "\033[31m";
     infantryLegion->add(infantry3);
     std::cout << yellow << "Added three Infantry units to the Legion." << reset << std::endl;
 
+    cout << endl;
     // Create a sub-legion and add it to the infantryLegion (demonstrating a composite of composites)
     printPattern(pattern, red);
     InfantryLegion* subLegion = new InfantryLegion();
@@ -189,16 +259,22 @@ const std::string red = "\033[31m";
     infantryLegion->add(subLegion);
     std::cout << red << "Sub-Legion created and added to the main Infantry Legion." << reset << std::endl;
 
+
+    cout << endl;
+
     // Perform actions on the legion and all its components
     std::cout << "\nExecuting Composite Pattern Test:\n" << std::endl;
 
     printPattern(pattern, blue);
     infantryLegion->move();  // Should move all units in the legion and sub-legion
+    cout << endl;
     std::cout << blue << "Infantry Legion and its sub-legion have moved!" << reset << std::endl;
 
     printPattern(pattern, yellow);
     infantryLegion->attack();  // Should execute attack for all units in the legion and sub-legion
     std::cout << yellow << "Infantry Legion and its sub-legion have attacked!" << reset << std::endl;
+
+    cout << endl;
 
     // Clean up
     printPattern("Cleaning up resources...", red);
@@ -211,7 +287,8 @@ const std::string red = "\033[31m";
     delete infantryLegion;
     delete woodlandFactory;
 
-    std::cout << green << "Cleanup completed. All resources have been successfully deleted." << reset << std::endl;}
+    std::cout << green << "Cleanup completed. All resources have been successfully deleted." << reset << std::endl;
+   }
 
 void testStrategy() {
  const std::string red = "\033[31m";
@@ -223,34 +300,48 @@ void testStrategy() {
 
     // Create factories for different terrains
     printPattern("Creating Legion Factories for Different Terrains...", blue);
+       std::string heading = "Strategy Design Pattern";
+    std::string separator = std::string(30, '=');
+    cout << endl;
+cout << endl;
+printPattern(pattern, green);
+    typeEffect(separator);
+    typeEffect(heading + std::string(30- heading.length(), ' '));
+    typeEffect(separator);
+printPattern(pattern, green);
+cout << endl;
+
     LegionFactory* woodlandFactory = new WoodlandFactory();
     LegionFactory* riverbankFactory = new RiverbankFactory();
     LegionFactory* openFieldFactory = new OpenFieldFactory();
     std::cout << blue << "Factories created for Woodland, Riverbank, and OpenField terrains." << reset << std::endl;
 
+
+cout << endl;
     // Create units for each terrain
     printPattern(pattern, green);
     std::vector<LegionUnit*> woodlandUnits;
     woodlandUnits.push_back(woodlandFactory->createInfantry());
     woodlandUnits.push_back(woodlandFactory->createCavalry());
     woodlandUnits.push_back(woodlandFactory->createArtillery());
-
+ cout << endl;
+    
     std::vector<LegionUnit*> riverbankUnits;
     riverbankUnits.push_back(riverbankFactory->createInfantry());
     riverbankUnits.push_back(riverbankFactory->createCavalry());
     riverbankUnits.push_back(riverbankFactory->createArtillery());
-
+ cout << endl;
+    
     std::vector<LegionUnit*> openFieldUnits;
     openFieldUnits.push_back(openFieldFactory->createInfantry());
     openFieldUnits.push_back(openFieldFactory->createCavalry());
     openFieldUnits.push_back(openFieldFactory->createArtillery());
 
     std::cout << green << "Units created for Woodland, Riverbank, and OpenField terrains." << reset << std::endl;
+cout << endl;
 
     // Create tactical command object
     TacticalCommand command;
-    std::cout << pattern << std::endl;
-
     // Test different strategies on Woodland units
     printPattern(pattern, yellow);
 
@@ -260,37 +351,49 @@ void testStrategy() {
     command.setStrategy(new Flanking());
     command.executeStrategy(woodlandUnits);
 
+   cout << endl;
+    cout << endl;
+
     // Test Fortification strategy
     cout << "Setting Fortification Strategy:\n";
     printPattern(pattern, green);
     command.setStrategy(new Fortification());
     command.executeStrategy(woodlandUnits);
 
+    cout << endl;
+    cout << endl;
+
     // Test Ambush strategy
     printPattern("Setting Ambush Strategy:", blue);
     command.setStrategy(new Ambush());
     command.executeStrategy(woodlandUnits);
 
+   cout <<endl;
     std::cout << pattern << std::endl;
-
     // Switch to Riverbank units
     printPattern("Testing Strategies on Riverbank Units:", yellow);
 
     // Test Flanking strategy
     printPattern("Setting Flanking Strategy:", red);
     command.setStrategy(new Flanking());
+  //  command.chooseBestStrategy(riverbankUnits);
     command.executeStrategy(riverbankUnits);
+
+   cout << endl;
+    cout << endl;
 
     // Test Fortification strategy
     printPattern("Setting Fortification Strategy:", green);
     command.setStrategy(new Fortification());
     command.executeStrategy(riverbankUnits);
 
+cout << endl;
     // Test Ambush strategy
     printPattern("Setting Ambush Strategy:", blue);
     command.setStrategy(new Ambush());
     command.executeStrategy(riverbankUnits);
 
+cout << endl;
     std::cout << pattern << std::endl;
 
     // Switch to OpenField units
@@ -299,17 +402,22 @@ void testStrategy() {
     // Test Flanking strategy
     printPattern("Setting Flanking Strategy:", red);
     command.setStrategy(new Flanking());
-    command.executeStrategy(openFieldUnits);
+//    command.executeStrategy(openFieldUnits);
+
+ cout << endl;
+    cout << endl;
 
     // Test Fortification strategy
     printPattern("Setting Fortification Strategy:", green);
     command.setStrategy(new Fortification());
-    command.executeStrategy(openFieldUnits);
+   // command.executeStrategy(openFieldUnits);
 
+   cout << endl;
+    cout << endl;
     // Test Ambush strategy
     printPattern("Setting Ambush Strategy:", blue);
     command.setStrategy(new Ambush());
-    command.executeStrategy(openFieldUnits);
+//    command.executeStrategy(openFieldUnits);
 
     std::cout << pattern << std::endl;
 
@@ -317,20 +425,20 @@ void testStrategy() {
     printPattern("Cleaning up resources...", red);
     delete woodlandFactory;
     delete riverbankFactory;
-    delete openFieldFactory;
+ //   delete openFieldFactory;
     for (auto unit : woodlandUnits) delete unit;
     for (auto unit : riverbankUnits) delete unit;
-    for (auto unit : openFieldUnits) delete unit;
+  //  for (auto unit : openFieldUnits) delete unit;
     std::cout << green << "Cleanup completed. All resources have been successfully deleted." << reset << std::endl;
 }
 
 
 int main() {
 
-   // testComposite();
-   // testAbstract();
-   testMemento();
-   //testStrategy();
+   testComposite();
+   testAbstract();
+  testMemento();
+   testStrategy();
    return 0;
   
 }
