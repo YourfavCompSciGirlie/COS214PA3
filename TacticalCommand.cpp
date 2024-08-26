@@ -11,12 +11,17 @@
 
 TacticalCommand::TacticalCommand(BattleStrategy* initialStrategy)  {
     if(initialStrategy != NULL) {
+        //planner->createMemento()
         strategy = initialStrategy;
     } else {
         std::cout << "Could not construct tactical command\n";
     }
 }
 
+TacticalCommand::TacticalCommand()
+{
+    std::cout << "Tactical command up and running!\n";
+}
 
 // Added OWN function - Destructor to delete pointer (TC owns BS)
 TacticalCommand::~TacticalCommand() {
