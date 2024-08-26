@@ -19,7 +19,7 @@ class TacticalCommand { // context for strategy and client for memento
         TacticalCommand(BattleStrategy* initialStrategy);
 
         // Added OWN function
-        TacticalCommand();
+        TacticalCommand() {}
         ~TacticalCommand();  // Destructor to clean up strategy
         
         void setStrategy(BattleStrategy* s);

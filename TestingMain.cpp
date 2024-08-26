@@ -109,8 +109,8 @@ void testStrategy() {
     command.executeStrategy(riverbankUnits);
     
     std::cout << "Executing Flanking strategy for OpenField units:\n";
-    command.chooseBestStrategy(openFieldUnits);
-    command.executeStrategy(openFieldUnits);
+    // command.chooseBestStrategy(openFieldUnits);
+    // command.executeStrategy(openFieldUnits);
 
     // Test Fortification strategy
     std::cout << "Testing Fortification Strategy:\n";
@@ -126,8 +126,8 @@ void testStrategy() {
     command.executeStrategy(riverbankUnits);
     
     std::cout << "Executing Fortification strategy for OpenField units:\n";
-    command.chooseBestStrategy(openFieldUnits);
-    command.executeStrategy(openFieldUnits);
+    // command.chooseBestStrategy(openFieldUnits);
+    // command.executeStrategy(openFieldUnits);
 
     // Test Ambush strategy
     std::cout << "Testing Ambush Strategy:\n";
@@ -143,17 +143,17 @@ void testStrategy() {
     command.executeStrategy(riverbankUnits);
     
     std::cout << "Executing Ambush strategy for OpenField units:\n";
-    command.chooseBestStrategy(openFieldUnits);
-    command.executeStrategy(openFieldUnits);
+    // command.chooseBestStrategy(openFieldUnits);
+    // command.executeStrategy(openFieldUnits);
 
     // Clean up
     delete woodlandFactory;
     delete riverbankFactory;
-    delete openFieldFactory;
+    // delete openFieldFactory;
     
     for (auto unit : woodlandUnits) delete unit;
     for (auto unit : riverbankUnits) delete unit;
-    for (auto unit : openFieldUnits) delete unit;
+    // for (auto unit : openFieldUnits) delete unit;
 }
 
 
@@ -340,11 +340,11 @@ int main() {
 
     cout << "===== Strategy Design Pattern Testing =============" << endl;
 
-    testMementoPattern();
+    testStrategy();
 
     cout << "===== Memento Design Pattern Testing ==============" << endl;
 
-    testStrategy();
+    testMementoPattern();
 
     cout << "===== Composite Design Pattern Testing =============" << endl;
 
