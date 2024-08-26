@@ -6,6 +6,7 @@
 #include "BattleStrategy.h"
 #include "TacticalMemento.h"
 #include "WarArchives.h"
+#include "TacticalPlanner.h"
 
 #include <vector>
 
@@ -13,7 +14,8 @@ class TacticalCommand { // context for strategy and client for memento
 
     private:
         BattleStrategy* strategy;  // Pointer to a BattleStrategy object
-        WarArchives warArchives;  
+        WarArchives warArchives; 
+        TacticalPlanner* planner; 
 
     public:
         TacticalCommand(BattleStrategy* initialStrategy);
