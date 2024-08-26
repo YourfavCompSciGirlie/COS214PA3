@@ -1,13 +1,13 @@
 #include "Legion.h"
 
-void Legion::add(UnitComponent *unit) override
+void Legion::add(UnitComponent *unit)
 {
    if(unit != NULL) {
       legions.push_back(unit);
    }
 }
 
-void Legion::remove(UnitComponent *unit) override
+void Legion::remove(UnitComponent *unit)
 {
    if(unit != NULL) {
       for(auto it = legions.begin(); it != legions.end(); ++it) {
@@ -19,14 +19,14 @@ void Legion::remove(UnitComponent *unit) override
    }
 }
 
-void Legion::move() override
+void Legion::move()
 {
    for(UnitComponent *unit : legions) {
       unit->move();
    }
 }
 
-void Legion::fight() override
+void Legion::fight()
 {
    for(UnitComponent *unit : legions) {
       unit->fight();
