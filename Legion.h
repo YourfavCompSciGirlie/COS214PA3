@@ -19,7 +19,7 @@ class Legion : public UnitComponent//composite class
       void add(UnitComponent* unit);
       void remove(UnitComponent* unit);
       virtual void move() = 0;
-      virtual void fight() = 0;
+      virtual void attack() = 0;
 
 };
 

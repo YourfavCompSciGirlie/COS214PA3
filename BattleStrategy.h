@@ -11,12 +11,14 @@
 
 
 class BattleStrategy {
+    private:
+        //what is the state
     
     public:
         virtual ~BattleStrategy() {}
         virtual void engage(std::vector<LegionUnit*> units) = 0;  // Pure virtual function to execute the strategy
-        virtual TacticalMemento* saveToMemento() = 0;  // Save current state to memento
-        virtual void restoreFromMemento(TacticalMemento* memento) = 0;  // Restore state from memento
+        TacticalMemento* saveToMemento();  // Save current state to memento
+        void restoreFromMemento(TacticalMemento* memento);  // Restore state from memento
     
 };
 
