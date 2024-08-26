@@ -3,15 +3,15 @@
 
 #include "BattleStrategy.h"
 
-class TacticalMemento
+class TacticalMemento 
 {
    private:
-      BattleStrategy* strategy
+      BattleStrategy* strategy;
    public: 
-      TacticalMemento();
+      TacticalMemento() {};
       void storeStrategy(BattleStrategy* strategy);
       virtual ~TacticalMemento();
-      BattleStategy* getStrategy();
+      BattleStrategy* getStrategy();
       
 
 };

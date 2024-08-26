@@ -7,7 +7,7 @@
 #include "TacticalMemento.h"
 using namespace std;
 
-class WarArchives
+class WarArchives //caretaker
 {
 private:
    map<string, TacticalMemento*> mementos;

@@ -9,6 +9,7 @@ class Ambush : public BattleStrategy {
     
     public:
         virtual void engage();
+        BattleConditions conditions;
 };
 
 #endif // AMBUSH_H

@@ -9,6 +9,7 @@ class Flanking : public BattleStrategy {
     
     public:
         virtual void engage();
+        BattleConditions conditions;
 };
 
 #endif // FLANKING_H

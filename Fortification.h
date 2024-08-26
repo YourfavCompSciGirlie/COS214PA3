@@ -9,6 +9,7 @@ class Fortification : public BattleStrategy {
     
     public:
         virtual void engage();
+        BattleConditions conditions;
 };
 
 #endif // FORTIFICATION_H

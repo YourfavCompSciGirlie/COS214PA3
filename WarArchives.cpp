@@ -2,7 +2,7 @@
 
 void WarArchives::addTacticalMemento(TacticalMemento *memento, string label)
 {
-   mementos.insert(label, memento);
+   mementos[label] = memento;
 }
 
 void WarArchives::removeTacticalMemento(string label)
@@ -16,5 +16,7 @@ TacticalMemento *WarArchives::getTacticalMemento(string label)
 {
    if(label != "") {
       return mementos[label];
+   } else {
+      return NULL;
    }
 }
