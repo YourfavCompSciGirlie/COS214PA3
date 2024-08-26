@@ -13,6 +13,8 @@
 class BattleStrategy {
     private:
         //what is the state
+        TacticalMemento* memento;
+        
     
     public:
         virtual ~BattleStrategy() {}
