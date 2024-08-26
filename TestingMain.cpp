@@ -201,12 +201,12 @@ void testMementoPattern() {
     // command->executeStrategy() //needs a legion
 
     // Clean up
-    delete flanking;
-    delete fortification;
-    delete ambush;
-    delete planner;
-    delete archives;
-    delete command;
+    // delete flanking;
+    // delete fortification;
+    // delete ambush;
+    // delete planner;
+    // delete archives;
+    // delete command;
 }
 
 
