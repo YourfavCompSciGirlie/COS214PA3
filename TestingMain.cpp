@@ -21,8 +21,10 @@
 
 #include "BattleStrategy.h"
 #include "TacticalMemento.h"
-#include "TacticalCommand.h"
 #include "WarArchives.h"
+
+#include "Legion.h"
+
 
 using namespace std;
 
@@ -150,6 +152,106 @@ void testStrategy() {
 }
 
 
+void testIndividualUnits() {
+    std::cout << "---- Testing Individual Units ----" << std::endl;
+    
+    Infantry infantry;
+    Cavalry cavalry;
+    Artillery artillery;
+
+    infantry.move();
+    infantry.fight();
+
+    cavalry.move();
+    cavalry.fight();
+
+    artillery.move();
+    artillery.fight();
+}
+
+void testCompositeLegion() {
+    std::cout << "\n---- Testing Composite Legion ----" << std::endl;
+
+    // Create individual units
+    UnitComponent* infantry1 = new Infantry();
+    UnitComponent* cavalry1 = new Cavalry();
+    UnitComponent* artillery1 = new Artillery();
+
+    // Create a composite legion
+    Legion* legion = new Legion();
+
+    // Add individual units to the legion
+    legion->add(infantry1);
+    legion->add(cavalry1);
+    legion->add(artillery1);
+
+    // Execute commands on the composite legion
+    legion->move();
+    legion->fight();
+
+    delete legion;
+}
+
+void testNestedLegions() {
+    std::cout << "\n---- Testing Nested Legions ----" << std::endl;
+
+    // Create individual units
+    UnitComponent* infantry1 = new Infantry();
+    UnitComponent* cavalry1 = new Cavalry();
+
+    // Create first sub-legion
+    Legion* subLegion1 = new Legion();
+    subLegion1->add(infantry1);
+    subLegion1->add(cavalry1);
+
+    // Create second sub-legion with more units
+    UnitComponent* artillery1 = new Artillery();
+    UnitComponent* infantry2 = new Infantry();
+    Legion* subLegion2 = new Legion();
+    subLegion2->add(artillery1);
+    subLegion2->add(infantry2);
+
+    // Create main legion and add sub-legions
+    Legion* mainLegion = new Legion();
+    mainLegion->add(subLegion1);
+    mainLegion->add(subLegion2);
+
+    // Execute commands on the main legion
+    mainLegion->move();
+    mainLegion->fight();
+
+    delete mainLegion;
+}
+
+void testRemoveFunctionality() {
+    std::cout << "\n---- Testing Remove Functionality ----" << std::endl;
+
+    // Create individual units
+    UnitComponent* infantry1 = new Infantry();
+    UnitComponent* cavalry1 = new Cavalry();
+    UnitComponent* artillery1 = new Artillery();
+
+    // Create a legion and add units
+    Legion* legion = new Legion();
+    legion->add(infantry1);
+    legion->add(cavalry1);
+    legion->add(artillery1);
+
+    // Execute move and fight before removing any units
+    legion->move();
+    legion->fight();
+
+    // Remove the cavalry unit and test again
+    legion->remove(cavalry1);
+    std::cout << "\nAfter removing Cavalry:\n";
+    legion->move();
+    legion->fight();
+
+    delete legion;
+}
+
+
+
 int main() {
 
     cout << "===== Abstract Factory Design Pattern Testing =====" << endl;
@@ -170,6 +272,13 @@ int main() {
     cout << "===== Strategy Design Pattern Testing =============" << endl;
 
     testStrategy();
+
+    cout << "===== Composite Design Pattern Testing =============" << endl;
+
+    testIndividualUnits();
+    testCompositeLegion();
+    testNestedLegions();
+    testRemoveFunctionality();
 
     cout << "===== End of All Tests =====" << endl;
 
