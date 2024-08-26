@@ -19,16 +19,16 @@ void Legion::remove(UnitComponent *unit) override
    }
 }
 
-void Legion::move() override
+void Legion::move() 
 {
    for(UnitComponent *unit : legions) {
       unit->move();
    }
 }
 
-void Legion::fight() override
+void Legion::attack()
 {
    for(UnitComponent *unit : legions) {
-      unit->fight();
+      unit->attack();
    }
 }

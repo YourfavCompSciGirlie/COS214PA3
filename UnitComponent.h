@@ -16,7 +16,7 @@ class UnitComponent
       /* data */
    public:
       virtual void move() = 0;
-      virtual void fight() = 0;
+      virtual void attack() = 0;
       virtual void add(UnitComponent* component) = 0;
       virtual void remove(UnitComponent* component) = 0;
 };
