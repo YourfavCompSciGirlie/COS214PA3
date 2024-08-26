@@ -51,7 +51,7 @@ void TacticalCommand::executeStrategy(std::vector<LegionUnit*> units) {
 
 void TacticalCommand::chooseBestStrategy(std::vector<LegionUnit*> units) {
     // Placeholder for future implementation using the Memento pattern
-    std::cout << "🔮 **Choosing the Best Strategy**: Analyzing previous results to determine the optimal tactic for the current situation." << std::endl;
+    std::cout << "🔮 **Choosing the Best Strategy**: Analyzing previous results to determine the optimal tactic for the current situation.\n" << std::endl;
 
     if (units.empty()) {
         std::cout << "No units to choose strategy for!" << std::endl;
