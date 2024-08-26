@@ -1,13 +1,31 @@
-#ifndef RIVERBANK_ARTILLERY_H
-#define RIVERBANK_ARTILLERY_H
+#ifndef RIVERBANKARTILLERY_H
+#define RIVERBANKARTILLERY_H
 
 #include "Artillery.h"
 
+#include <iostream>
+
 class RiverbankArtillery : public Artillery {
+
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN function
+        RiverbankArtillery();
+        ~RiverbankArtillery();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
+
+        void move();
+        void attack();
 };
 
-#endif // RIVERBANK_ARTILLERY_H
+#endif // RIVERBANKARTILLERY_H

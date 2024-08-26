@@ -1,13 +1,31 @@
-#ifndef OPENFIELD_CAVALRY_H
-#define OPENFIELD_CAVALRY_H
+#ifndef OPENFIELDCAVALRY_H
+#define OPENFIELDCAVALRY_H
 
 #include "Cavalry.h"
 
+#include <iostream>
+
 class OpenFieldCavalry : public Cavalry {
+
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        OpenFieldCavalry();
+        ~OpenFieldCavalry();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
+
+        void move();
+        void attack();
 };
 
-#endif // OPENFIELD_CAVALRY_H
+#endif // OPENFIELDCAVALRY_H

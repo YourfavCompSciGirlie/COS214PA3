@@ -11,9 +11,12 @@ class Cavalry : public LegionUnit, public UnitComponent {//also leaf class for U
     protected:
         vector<UnitComponent*> terrainUnits;
     public:
+        // Added OWN function
+        Cavalry();
         void add(UnitComponent* unit);
         void remove(UnitComponent* unit);
-        virtual ~Cavalry() {}
+        virtual ~Cavalry();
+
         virtual void move() = 0;
         virtual void attack() = 0;
 

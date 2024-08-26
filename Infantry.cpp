@@ -19,7 +19,7 @@ void Infantry::move() {
 }
 
 
-
-void Infantry::attack() {
-    std::cout << "Infantry engaging in close combat with sword and shield." << std::endl;
+// Destructor
+Infantry::~Infantry() {
+    cout << "Infantry: Heading back to the barracks." << endl;
 }

@@ -1,19 +1,27 @@
 // Class definition for 4. Abstract Factory
 
-#ifndef WOODLAND_FACTORY_H
-#define WOODLAND_FACTORY_H
+#ifndef WOODLANDFACTORY_H
+#define WOODLANDFACTORY_H
 
 #include "LegionFactory.h"
 #include "WoodlandInfantry.h"
 #include "WoodlandCavalry.h"
 #include "WoodlandArtillery.h"
 
+using namespace std;
+
 class WoodlandFactory : public LegionFactory {
 
     public:
-        virtual Infantry* createInfantry();
-        virtual Cavalry* createCavalry();
-        virtual Artillery* createArtillery();
+        // Added OWN functions
+        WoodlandFactory();
+        ~WoodlandFactory();
+
+        Infantry* createInfantry();
+        Cavalry* createCavalry();
+        Artillery* createArtillery();
+
+        void deployArtillery();
 };
 
-#endif // WOODLAND_FACTORY_H
+#endif // WOODLANDFACTORY_H

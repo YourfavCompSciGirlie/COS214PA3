@@ -1,13 +1,31 @@
-#ifndef OPENFIELD_ARTILLERY_H
-#define OPENFIELD_ARTILLERY_H
+#ifndef OPENFIELDARTILLERY_H
+#define OPENFIELDARTILLERY_H
 
 #include "Artillery.h"
 
+#include <iostream>
+
 class OpenFieldArtillery : public Artillery {
+
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
     
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        OpenFieldArtillery();
+        ~OpenFieldArtillery();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
+
+        void move();
+        void attack();
 };
 
-#endif // OPENFIELD_ARTILLERY_H
+#endif // OPENFIELDARTILLERY_H

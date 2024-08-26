@@ -12,7 +12,10 @@ class Infantry : public LegionUnit, public UnitComponent {
     public:
         void add(UnitComponent* unit);
         void remove(UnitComponent* unit);
-        virtual ~Infantry() {}
+        // Added OWN functions
+        Infantry();
+        virtual ~Infantry();
+
         virtual void move() = 0;
         virtual void attack() = 0;
 };

@@ -1,13 +1,31 @@
-#ifndef RIVERBANK_CAVALRY_H
-#define RIVERBANK_CAVALRY_H
+#ifndef RIVERBANKCAVALRY_H
+#define RIVERBANKCAVALRY_H
 
 #include "Cavalry.h"
 
+#include <iostream>
+
 class RiverbankCavalry : public Cavalry {
 
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;    
+
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        RiverbankCavalry();
+        ~RiverbankCavalry();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
+
+        void move();
+        void attack();
 };
 
-#endif // RIVERBANK_CAVALRY_H
+#endif // RIVERBANKCAVALRY_H

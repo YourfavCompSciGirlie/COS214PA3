@@ -1,13 +1,31 @@
-#ifndef WOODLAND_ARTILLERY_H
-#define WOODLAND_ARTILLERY_H
+#ifndef WOODLANDARTILLERY_H
+#define WOODLANDARTILLERY_H
 
 #include "Artillery.h"
 
+#include <iostream>
+
 class WoodlandArtillery : public Artillery {
 
+    private:
+        int mobility;
+        int defense;
+        int attackStrength;
+        int terrainAdaptability;
+
     public:
-        virtual void move();
-        virtual void attack();
+        // Added OWN functions
+        WoodlandArtillery();
+        ~WoodlandArtillery();
+
+        // Added functions for strategic decision-making
+        int getMobility();
+        int getDefense();
+        int getAttackStrength();
+        int getTerrainAdaptability();
+
+        void move();
+        void attack();
 };
 
-#endif // WOODLAND_ARTILLERY_H
+#endif // WOODLANDARTILLERY_H
