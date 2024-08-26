@@ -1,13 +1,16 @@
+// Class definition for 4. Abstract Factory
+
 #ifndef LEGIONUNIT_H
 #define LEGIONUNIT_H
+
+using namespace std;
 
 class LegionUnit {
 
     public:
-        virtual ~LegionUnit();
-
         //Added OWN function
         LegionUnit();
+        virtual ~LegionUnit();
 
         virtual void move() = 0;    // Command to move the unit on the battlefield.
         virtual void attack() = 0;  // Command to engage in combat.

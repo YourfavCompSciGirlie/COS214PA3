@@ -1,3 +1,5 @@
+// Class definition for 5. Strategy (Concrete Strategy)
+
 #ifndef AMBUSH_H
 #define AMBUSH_H
 
@@ -5,13 +7,16 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Ambush : public BattleStrategy {
     
     public:
-        void engage(std::vector<LegionUnit*> units);
-
-        // Added OWN function
+        // Added OWN functions
+        Ambush() {}
         ~Ambush() {}
+
+        void engage(vector<LegionUnit*> units);    
 };
 
 #endif // AMBUSH_H

@@ -1,15 +1,21 @@
+// Class definition for 7. Composite (Composite Child Class)
+
 #include "Legion.h"
+
 #include <iostream>
 
-class CavalryLegion : public Legion {
-public:
-    void move() override {
-        std::cout << "Cavalry Legion is charging!" << std::endl;
-        Legion::move();  // Delegate to all units in the collection
-    }
+using namespace std;
 
-    void attack() override {
-        std::cout << "Cavalry Legion is attacking the enemy!" << std::endl;
-        Legion::attack();  // Delegate to all units in the collection
-    }
+class CavalryLegion : public Legion {
+    
+    public:
+        void move() override {
+            cout << "Cavalry Legion is charging!" << endl;
+            Legion::move();  // Delegate to all units in the collection
+        }
+
+        void attack() override {
+            cout << "Cavalry Legion is attacking the enemy!" << endl;
+            Legion::attack();  // Delegate to all units in the collection
+        }
 };

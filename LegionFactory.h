@@ -1,4 +1,4 @@
-// Class definition for 4. Abstract Factory
+// Class definition for 4. Abstract Factory (Abstract Factory)
 
 #ifndef LEGIONFACTORY_H
 #define LEGIONFACTORY_H
@@ -12,7 +12,6 @@ using namespace std;
 class LegionFactory {
 
     public:
-
         // Added OWN function
         LegionFactory();
         virtual ~LegionFactory();
