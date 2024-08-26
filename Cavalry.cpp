@@ -15,10 +15,6 @@ void Cavalry::remove(UnitComponent *unit)
     }
 }
 
-void Cavalry::move()
-{
-   std::cout << "Cavalry galloping swiftly across the battlefield." << std::endl;
-}
 // Destructor
 Cavalry::~Cavalry() {
     cout << "Cavalry: Dismounting and heading to rest." << endl;

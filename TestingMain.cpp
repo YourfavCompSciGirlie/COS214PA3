@@ -160,13 +160,13 @@ void testIndividualUnits() {
     Artillery artillery;
 
     infantry.move();
-    infantry.fight();
+    infantry.attack();
 
     cavalry.move();
-    cavalry.fight();
+    cavalry.attack();
 
     artillery.move();
-    artillery.fight();
+    artillery.attack();
 }
 
 void testCompositeLegion() {
@@ -187,7 +187,7 @@ void testCompositeLegion() {
 
     // Execute commands on the composite legion
     legion->move();
-    legion->fight();
+    legion->attack();
 
     delete legion;
 }
@@ -218,7 +218,7 @@ void testNestedLegions() {
 
     // Execute commands on the main legion
     mainLegion->move();
-    mainLegion->fight();
+    mainLegion->attack();
 
     delete mainLegion;
 }
@@ -227,9 +227,9 @@ void testRemoveFunctionality() {
     std::cout << "\n---- Testing Remove Functionality ----" << std::endl;
 
     // Create individual units
-    UnitComponent* infantry1 = new Infantry();
-    UnitComponent* cavalry1 = new Cavalry();
-    UnitComponent* artillery1 = new Artillery();
+    UnitComponent* infantry1 = new WoodlandInfantry();
+    UnitComponent* cavalry1 = new RiverbankCavalry();
+    UnitComponent* artillery1 = new OpenFieldArtillery();
 
     // Create a legion and add units
     Legion* legion = new Legion();
@@ -239,13 +239,13 @@ void testRemoveFunctionality() {
 
     // Execute move and fight before removing any units
     legion->move();
-    legion->fight();
+    legion->attack();
 
     // Remove the cavalry unit and test again
     legion->remove(cavalry1);
     std::cout << "\nAfter removing Cavalry:\n";
     legion->move();
-    legion->fight();
+    legion->attack();
 
     delete legion;
 }
