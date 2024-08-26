@@ -15,6 +15,7 @@ class TacticalMemento
       void storeStrategy(BattleStrategy* strategy);
       virtual ~TacticalMemento();
       BattleStrategy* getStrategy();
+      void printStoredStrategy() const;
       
 
 };

@@ -25,15 +25,17 @@ TacticalCommand::TacticalCommand()
 
 // Added OWN function - Destructor to delete pointer (TC owns BS)
 TacticalCommand::~TacticalCommand() {
-    delete strategy;  // Clean up the strategy object
+    if (strategy) {
+        delete strategy;
+    }  // Clean up the strategy object
 }
 
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
     // Optionally delete old strategy if TacticalCommand owns it
-    if (strategy) {
-        delete strategy; // Clean up the old strategy
-    }
+    // if (strategy) {
+    //     delete strategy; // Clean up the old strategy
+    // }
     strategy = s;
 }
 

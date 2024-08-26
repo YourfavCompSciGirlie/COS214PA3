@@ -13,6 +13,7 @@ private:
    map<string, TacticalMemento*> mementos;
    
 public:
+   ~WarArchives() {}
    void addTacticalMemento(TacticalMemento* memento, string label);
    void removeTacticalMemento(string label);
    TacticalMemento* getTacticalMemento(string label);

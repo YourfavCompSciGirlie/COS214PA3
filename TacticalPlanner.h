@@ -11,6 +11,7 @@ class TacticalPlanner
    private:
       BattleStrategy* currentStrategy;
    public:
+      ~TacticalPlanner() {}
       TacticalMemento* createMemento();
       void restoreMemento(TacticalMemento* memento);
       void setStrategy(BattleStrategy* strategy);

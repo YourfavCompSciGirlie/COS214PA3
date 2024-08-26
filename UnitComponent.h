@@ -13,6 +13,7 @@ It lists the things they all have in common.*/
 class UnitComponent
 {
    public:
+      virtual ~UnitComponent() {}
       virtual void move() = 0;
       virtual void attack() = 0;
       virtual void add(UnitComponent* component) = 0;
