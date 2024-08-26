@@ -13,13 +13,3 @@ void Infantry::remove(UnitComponent* unit) {
     }
    // terrainUnits.erase(std::remove(terrainUnits.begin(), terrainUnits.end(), component), terrainUnits.end());
 }
-
-void Infantry::move() {
-    std::cout << "Infantry advancing forward with steady steps." << std::endl;
-}
-
-
-// Destructor
-Infantry::~Infantry() {
-    cout << "Infantry: Heading back to the barracks." << endl;
-}
