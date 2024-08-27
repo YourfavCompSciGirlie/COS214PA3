@@ -1,4 +1,4 @@
-// Class definition for 5. Strategy
+// Class implementation for 5. Strategy (Memento Client)
 
 #include "BattleStrategy.h"
 #include "TacticalCommand.h"
@@ -9,14 +9,18 @@
 
 #include <iostream>
 
-TacticalCommand::TacticalCommand(BattleStrategy* initialStrategy)  {
-    if(initialStrategy != NULL) {
-        //planner->createMemento()
+using namespace std;
+
+
+TacticalCommand::TacticalCommand(BattleStrategy* initialStrategy) {
+    if (initialStrategy != NULL) {
         strategy = initialStrategy;
     } else {
-        std::cout << "Could not construct tactical command\n";
+        cout << "Could not construct tactical command\n";
     }
 }
+
+
 
 TacticalCommand::TacticalCommand(): planner(new TacticalPlanner())
 {
@@ -24,11 +28,14 @@ TacticalCommand::TacticalCommand(): planner(new TacticalPlanner())
     
 }
 
+
+
 // Added OWN function - Destructor to delete pointer (TC owns BS)
 TacticalCommand::~TacticalCommand() {
     delete strategy;  // Clean up the strategy object
     delete planner;
 }
+
 
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
@@ -71,10 +78,10 @@ void TacticalCommand::executeStrategy(std::vector<LegionUnit*> units) {
 
 void TacticalCommand::chooseBestStrategy(std::vector<LegionUnit*> units) {
     // Placeholder for future implementation using the Memento pattern
-    std::cout << "🔮 **Choosing the Best Strategy**: Analyzing previous results to determine the optimal tactic for the current situation.\n" << std::endl;
+    cout << "🔮 -- Choosing the Best Strategy: Analyzing previous results to determine the optimal tactic for the current situation.\n" << endl;
 
     if (units.empty()) {
-        std::cout << "No units to choose strategy for!" << std::endl;
+        cout << "No units to choose strategy for!" << endl;
         return;
     }
 
@@ -111,7 +118,7 @@ void TacticalCommand::chooseBestStrategy(std::vector<LegionUnit*> units) {
   
         setStrategy(m->getStrategy());
     } else {
-        std::cout << "No optimal strategy found, defaulting to Fortification." << std::endl;
+        cout << "No optimal strategy found, defaulting to Fortification." << endl;
         setStrategy(new Fortification());
     }
 }

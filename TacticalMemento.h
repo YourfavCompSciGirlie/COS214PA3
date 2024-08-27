@@ -1,22 +1,27 @@
+// Class definition for 6. Memento (Memento Class)
+
 #ifndef TACTICALMENENTO_H
 #define TACTICALMENENTO_H
 
-
 #include "BattleStrategy.h"
+
+using namespace std;
+
 class BattleStrategy;
 
-class TacticalMemento 
-{
-   private:
+class TacticalMemento {
    
+   private:
       BattleStrategy* strategy;
-   public: 
-      TacticalMemento() {};
-      void storeStrategy(BattleStrategy* strategy);
-      virtual ~TacticalMemento();
-      BattleStrategy* getStrategy();
-      
 
+   public: 
+      // Added OWN functions
+      TacticalMemento() {}
+      virtual ~TacticalMemento();
+
+      void storeStrategy(BattleStrategy* strategy);
+      BattleStrategy* getStrategy();
+      void printStoredStrategy() const;
 };
 
 #endif

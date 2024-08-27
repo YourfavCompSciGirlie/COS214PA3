@@ -1,4 +1,4 @@
-// Class implementation for 4. Abstract Factory
+// Class implementation for 4. Abstract Factory (Abstract Factory)
 
 #include "LegionFactory.h"
 
@@ -6,10 +6,13 @@
 
 using namespace std;
 
+
 // Constructor definition
 LegionFactory::LegionFactory() {
     cout << "Hey! LegionFactory is in session..." << endl;
 }
+
+
 
 // Destructor definition
 LegionFactory::~LegionFactory() {

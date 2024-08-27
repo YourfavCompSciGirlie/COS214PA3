@@ -1,9 +1,13 @@
+// Class definition for 5. Strategy (Concrete Strategy)
+
 #ifndef FLANKING_H
 #define FLANKING_H
 
 #include "BattleStrategy.h"
 
 #include <iostream>
+
+using namespace std;
 
 class Flanking : public BattleStrategy {
     
@@ -15,4 +19,3 @@ class Flanking : public BattleStrategy {
 };
 
 #endif // FLANKING_H
-

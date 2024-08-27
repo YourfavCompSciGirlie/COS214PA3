@@ -1,9 +1,15 @@
+// Class implementation for 4. Abstract Factory (Abstract Product)
+
 #include "Cavalry.h"
 
-void Cavalry::add(UnitComponent *unit)
-{
+using namespace std;
+
+
+void Cavalry::add(UnitComponent *unit) {
     terrainUnits.push_back(unit);
 }
+
+
 
 void Cavalry::remove(UnitComponent *unit)
 {
@@ -14,8 +20,3 @@ void Cavalry::remove(UnitComponent *unit)
         }
     }
 }
-
-// Destructor
-// Cavalry::~Cavalry() {
-//     cout << "Cavalry: Dismounting and heading to rest." << endl;
-// }

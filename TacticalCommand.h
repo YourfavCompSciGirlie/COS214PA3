@@ -1,4 +1,4 @@
-// Class definition for 5. Strategy
+// Class definition for 5. Strategy (Memento Client)
 
 #ifndef TACTICALCOMMAND_H
 #define TACTICALCOMMAND_H
@@ -10,7 +10,9 @@
 
 #include <vector>
 
-class TacticalCommand { // context for strategy and client for memento
+using namespace std;
+
+class TacticalCommand { // Context for Strategy and Client for Memento
 
     private:
         BattleStrategy* strategy;  // Pointer to a BattleStrategy object
