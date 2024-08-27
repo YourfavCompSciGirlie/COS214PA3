@@ -19,8 +19,6 @@ class BattleStrategy {
     private:
         TacticalMemento* memento;
 
-        
-    
     public:
         std::string name;
         virtual ~BattleStrategy() {}

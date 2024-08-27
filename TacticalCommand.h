@@ -18,10 +18,8 @@ class TacticalCommand { // Context for Strategy and Client for Memento
         BattleStrategy* strategy;  // Pointer to a BattleStrategy object
         WarArchives warArchives; 
 
-
     public:
         TacticalCommand(BattleStrategy* initialStrategy);
-        
         TacticalPlanner* planner;
     
         // Added OWN function
