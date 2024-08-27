@@ -17,10 +17,9 @@ class TacticalMemento {
    public: 
       // Added OWN functions
       TacticalMemento() {}
-      ~TacticalMemento() {}
+      virtual ~TacticalMemento();
 
       void storeStrategy(BattleStrategy* strategy);
-      virtual ~TacticalMemento();
       BattleStrategy* getStrategy();
       void printStoredStrategy() const;
 };
