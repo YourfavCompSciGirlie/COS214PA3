@@ -87,14 +87,12 @@ cout << endl;
     woodlandFactory->deployArtillery();
     std::cout << yellow << "Woodland artillery deployed successfully!" << reset << std::endl;
 
- cout << endl;
     cout << endl;
 
     std::cout << yellow << "Deploying artillery for Riverbank terrain..." << reset << std::endl;
     riverbankFactory->deployArtillery();
     std::cout << yellow << "Riverbank artillery deployed successfully!" << reset << std::endl;
 
- cout << endl;
     cout << endl;
 
     std::cout << yellow << "Deploying artillery for OpenField terrain..." << reset << std::endl;
@@ -158,13 +156,11 @@ cout << endl;
     command->executeStrategy(units);
     std::cout << green << "The ambush was successful! Enemy forces are caught off guard." << reset << std::endl;
     
-     cout << endl;
     cout << endl;
     // Save Initial Strategy
     printPattern(pattern, yellow);
     std::cout << yellow << "Strategy 'Ambush' is saved for future reference." << reset << std::endl;
 
- cout << endl;
     cout << endl;
 
     // Change Strategy
@@ -174,7 +170,6 @@ cout << endl;
     command->executeStrategy(units);
     std::cout << blue << "Flanking strategy executed. Enemy is now surrounded and facing increased pressure!" << reset << std::endl;
 
- cout << endl;
     cout << endl;
 
     // Save New Strategy
@@ -187,7 +182,6 @@ cout << endl;
     command->executeStrategy(units);
     std::cout << green << "Restoration complete. The ambush is back in action, catching the enemy by surprise once again!" << reset << std::endl;
 
- cout << endl;
     cout << endl;
 
     // Choose Best Strategy
@@ -196,7 +190,6 @@ cout << endl;
     command->chooseBestStrategy(units);
 
  cout << endl;
-    cout << endl;
     // Restore Saved Strategy
     printPattern("Restoring saved FlankingStrategy from archives...", green);
     std::cout << green << "Restoring saved strategy 'Flanking' from archives. Preparing for an effective offensive!" << reset << std::endl;
@@ -237,6 +230,7 @@ cout << endl;
     Infantry* infantry2 = woodlandFactory->createInfantry();
     Infantry* infantry3 = woodlandFactory->createInfantry();
 
+cout << endl;
     std::cout << blue << "Three Infantry units created." << reset << std::endl;
 
     // Create a legion (composite)

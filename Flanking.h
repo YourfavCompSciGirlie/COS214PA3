@@ -8,6 +8,9 @@
 class Flanking : public BattleStrategy {
     
     public:
+       Flanking() { 
+            name = "Flanking";  // Set the name in the constructor
+        }
         void engage(std::vector<LegionUnit*> units);
 };
 

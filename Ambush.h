@@ -8,6 +8,9 @@
 class Ambush : public BattleStrategy {
     
     public:
+       Ambush() { 
+            name = "Ambush";  // Set the name in the constructor
+        }
         void engage(std::vector<LegionUnit*> units);
 };
 

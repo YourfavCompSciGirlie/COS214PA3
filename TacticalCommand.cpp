@@ -18,23 +18,43 @@ TacticalCommand::TacticalCommand(BattleStrategy* initialStrategy)  {
     }
 }
 
-TacticalCommand::TacticalCommand()
+TacticalCommand::TacticalCommand(): planner(new TacticalPlanner())
 {
     std::cout << "Tactical command up and running!\n";
+    
 }
 
 // Added OWN function - Destructor to delete pointer (TC owns BS)
 TacticalCommand::~TacticalCommand() {
     delete strategy;  // Clean up the strategy object
+    delete planner;
 }
 
 
 void TacticalCommand::setStrategy(BattleStrategy* s) {
     // Optionally delete old strategy if TacticalCommand owns it
-    if (strategy) {
-        delete strategy; // Clean up the old strategy
-    }
-    strategy = s;
+
+    // if (strategy) {
+    //     delete strategy; // Clean up the old strategy
+    // }
+
+
+
+    this->strategy = s;
+
+ if (this->planner) {
+        this->planner->setStrategy(s);
+
+        // Create the memento
+        TacticalMemento* memento = this->planner->createMemento();
+        if (memento) {  // Check if memento is valid
+            this->warArchives.addTacticalMemento(memento, s->name);
+        } else {
+            std::cout << "Failed to create a valid TacticalMemento!" << std::endl;
+        }
+    } else {
+        std::cout << "Planner is null!" << std::endl;
+    }    
 }
 
 
@@ -79,12 +99,17 @@ void TacticalCommand::chooseBestStrategy(std::vector<LegionUnit*> units) {
     avgTerrainAdaptability /= numUnits;
 
     // Choose strategy based on average attributes
-    if (avgMobility > 7 && avgAttackStrength > 6) {
-        setStrategy(new Flanking());
-    } else if (avgDefense > 7 && avgTerrainAdaptability > 6) {
-        setStrategy(new Fortification());
-    } else if (avgTerrainAdaptability > 7 && avgAttackStrength > 5) {
-        setStrategy(new Ambush());
+    if (avgMobility > 7 && avgAttackStrength > 6 && this->warArchives.getTacticalMemento("Flanking") != NULL) {
+        TacticalMemento* m = this->warArchives.getTacticalMemento("Flanking");
+        setStrategy(m->getStrategy());
+    } else if (avgDefense > 7 && avgTerrainAdaptability > 6 && this->warArchives.getTacticalMemento("Fortification") != NULL) {
+        TacticalMemento* m = this->warArchives.getTacticalMemento("Fortification");
+        
+        setStrategy(m->getStrategy());
+    } else if (avgTerrainAdaptability > 7 && avgAttackStrength > 5 && this->warArchives.getTacticalMemento("Ambush") != NULL) {
+        TacticalMemento* m = this->warArchives.getTacticalMemento("Ambush");
+  
+        setStrategy(m->getStrategy());
     } else {
         std::cout << "No optimal strategy found, defaulting to Fortification." << std::endl;
         setStrategy(new Fortification());

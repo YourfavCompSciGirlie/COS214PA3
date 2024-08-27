@@ -16,10 +16,14 @@ void TacticalPlanner::restoreMemento(TacticalMemento* memento)
 }
 
 void TacticalPlanner::setStrategy(BattleStrategy *strategy)
-{
-   if(strategy != NULL) {
-      this->currentStrategy = strategy;
-   }
+{ 
+
+   // if (this->currentStrategy) {
+   //      delete this->currentStrategy;
+   //      this->currentStrategy = NULL;
+   //  }
+      this->currentStrategy = strategy; //this line causes a memory leak
+
 }
 
 BattleStrategy *TacticalPlanner::getStrategy()
