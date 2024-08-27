@@ -24,9 +24,8 @@ using namespace std;
 #include <thread>
 #include <chrono>
 
-void printPattern(const std::string &pattern, const std::string &color)
-{
-    std::cout << color << pattern << "\033[0m" << std::endl;
+void printPattern(const std::string &pattern, const std::string &color) {
+    cout << color << pattern << "\033[0m" << endl;
 }
 
 void typeEffect(const std::string& text, int delay = 50) {
@@ -37,13 +36,15 @@ void typeEffect(const std::string& text, int delay = 50) {
     std::cout << std::endl;
 }
 
+
+
 void testAbstract() {
 const std::string red = "\033[31m";
     const std::string green = "\033[32m";
     const std::string blue = "\033[34m";
     const std::string yellow = "\033[33m";
     const std::string reset = "\033[0m";
-    const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
+    const std::string pattern = "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 
 
    std::string heading = "Abstract Factory Design Pattern";
@@ -126,7 +127,7 @@ void testMemento() {
     const std::string blue = "\033[34m";
     const std::string yellow = "\033[33m";
     const std::string reset = "\033[0m";
-    const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
+    const std::string pattern = "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 
     LegionFactory* woodlandFactory = new WoodlandFactory();
 
@@ -208,7 +209,7 @@ const std::string red = "\033[31m";
     const std::string blue = "\033[34m";
     const std::string yellow = "\033[33m";
     const std::string reset = "\033[0m";
-    const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
+    const std::string pattern = "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 
 
     // Create individual units (leaves)
@@ -290,7 +291,7 @@ void testStrategy() {
     const std::string blue = "\033[34m";
     const std::string yellow = "\033[33m";
     const std::string reset = "\033[0m";
-    const std::string pattern = "_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_#_";
+    const std::string pattern = "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 
     // Create factories for different terrains
     printPattern("Creating Legion Factories for Different Terrains...", blue);
@@ -428,11 +429,42 @@ cout << endl;
 
 
 int main() {
+    const std::string red = "\033[31m";
+    const std::string green = "\033[32m";
+    const std::string yellow = "\033[33m";
+    const std::string blue = "\033[34m";
+    const std::string magenta = "\033[35m";
+    const std::string reset = "\033[0m";
 
-   testComposite();
-   testAbstract();
-  testMemento();
-   testStrategy();
-   return 0;
-  
+    int choice;
+    while (true) {
+        std::cout << red << "Design Patterns Demo Menu:\n";
+        std::cout << green << "1. Abstract Factory\n";
+        std::cout << yellow << "2. Memento\n";
+        std::cout << blue << "3. Composite\n";
+        std::cout << magenta << "4. Strategy\n";
+        std::cout << red << "5. Exit\n";
+        std::cout << red << "Enter your choice: " << reset;
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                testAbstract();
+                break;
+            case 2:
+                testMemento();
+                break;
+            case 3:
+                testComposite();
+                break;
+            case 4:
+                testStrategy();
+                break;
+            case 5:
+                std::cout << "Exiting the demo. Goodbye!\n";
+                return 0;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
+        }
+    }
 }
